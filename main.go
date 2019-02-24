@@ -1,8 +1,7 @@
 package prng
 
 import (
-  "time"
-  //"fmt"
+  "time"  
 )
 
 const maxOutputLength uint32 = 1024
