@@ -1,8 +1,9 @@
 ## PSEUDO RANDOM STRING GENERATOR (PRNG)
 
-for golang 
+for golang
 
 ![](https://golang.org/doc/gopher/frontpage.png =80x)
+
 
 *fixed output length
 different algorithm usage possibility
@@ -50,7 +51,7 @@ useful tool for auto generating crypto pass, ids, links and etc.*
    OUTPUT: 2ZOeBKxUghxty200biKF2EyrRpHpKTA4QnbdISTzpo_
    Kt6ZC8roE4Nrz3CXDR11lPxD7m4CUSCna5SqyDdL16d1cRoRQggzG9xqf
 
-   
+
 
 **TEST COVERAGE 100%**
 
@@ -62,7 +63,7 @@ useful tool for auto generating crypto pass, ids, links and etc.*
   | 2    | custom | 64   | 9.374µs  | M6UikIfTRUfHl6hW5CgZnTJd3rertaMdWCWLIRlkendzir7rUX4ECIZh9FQF5ikx |
   | 3    | custom | 128  | 10.99µs  | xwOq34g8yPXHwGPKHN7uGNKrNwqjocqSWLoTEowKsIjFMABXinY9PjFUi6q6ERohLHQifrp59UNdqsjWKOVdwU9xy5eg5ekOBhFP3Ym9eUp7XEJFbTx7qjD |
 
-  
+
 
 * Testing crypto algorithm
 
@@ -72,7 +73,7 @@ useful tool for auto generating crypto pass, ids, links and etc.*
   | 2    | custom  | 64   | 51.448µs | M6UikIfTRUfHl6hW5CgZnTJd3rertaMdWCWLIRlkendzir7rUX4ECIZh9FQF5ikx |
   | 3    | default | 100  | 1.586µs  | Vullf4ZJt2qLKrDWpvswhujKnUvoGRUh1g9mzWnjh9C8NjqYiVzXTZWGCoUpvMDT |
 
-  
+
 
 **TODO:** // MAKE TEST SUITE ANALOGUE OF DIEHARDER for strong crypto random string sequences
 agenda: http://webhome.phy.duke.edu/~rgb/General/dieharder.php
