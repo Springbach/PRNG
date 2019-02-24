@@ -2,7 +2,7 @@ package prng
 
 import (
     "crypto/rand"
-    "encoding/base64"
+    "encoding/base64"    
 )
 
 type DefaultAlg struct {}

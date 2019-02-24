@@ -1,7 +1,8 @@
 package prng
 
 import (
-  "time"  
+  "time"
+  //"fmt"
 )
 
 const maxOutputLength uint32 = 1024
@@ -12,24 +13,28 @@ type ALG interface {
 }
 
 type Generator struct {
-  Alg ALG
   SymbolSet []byte
-  Elapsed time.Duration
+  Elapsed   time.Duration
   OutputLen uint32
-  Type  string
+  Type      string
 }
 
-func NewGEN(a ALG, set []byte, outLen uint32) *Generator {
-  return &Generator{Alg: a, SymbolSet: set, OutputLen: outLen, Type: "Custom" }
+func NewGEN(set []byte, outLen uint32) *Generator {
+  return &Generator{SymbolSet: set, OutputLen: outLen, Type: "Default" }
+
 }
 
 //Pseudo Random generator
-func (g *Generator) Generate() []byte {
+func (g *Generator) Generate(alg ALG) []byte {
+  if len(g.SymbolSet) == 0 {
+    alg = &DefaultAlg{}
+    g.Type = "default"
+  } else { g.Type = "custom"}
   defer tracker(time.Now(), &g.Elapsed)
   return alg.Rnd(g.SymbolSet, g.OutputLen)
 }
 
-//elapsed time tracker
+//time tracker for generator
 func tracker(start time.Time, elapsed *time.Duration) {
     *elapsed = time.Since(start)
 }

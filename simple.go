@@ -2,7 +2,7 @@ package prng
 
 import (
   "math/rand"
-  "time"
+  "time"  
 )
 
 type SimpleAlg struct {}
