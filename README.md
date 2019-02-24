@@ -1,9 +1,6 @@
 ## PSEUDO RANDOM STRING GENERATOR (PRNG)
 
-for golang
-
-![](https://golang.org/doc/gopher/frontpage.png =80x)
-
+for GOLANG <img src="https://golang.org/doc/gopher/frontpage.png" width="60">
 
 *fixed output length
 different algorithm usage possibility

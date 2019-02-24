@@ -1,7 +1,7 @@
 package prng
 
 import (
-  "time"  
+  "time"
 )
 
 const maxOutputLength uint32 = 1024
@@ -19,7 +19,7 @@ type Generator struct {
 }
 
 func NewGEN(set []byte, outLen uint32) *Generator {
-  return &Generator{SymbolSet: set, OutputLen: outLen, Type: "Default" }
+  return &Generator{SymbolSet: set, OutputLen: outLen, Type: "default" }
 
 }
 
@@ -27,7 +27,6 @@ func NewGEN(set []byte, outLen uint32) *Generator {
 func (g *Generator) Generate(alg ALG) []byte {
   if len(g.SymbolSet) == 0 {
     alg = &DefaultAlg{}
-    g.Type = "default"
   } else { g.Type = "custom"}
   defer tracker(time.Now(), &g.Elapsed)
   return alg.Rnd(g.SymbolSet, g.OutputLen)
