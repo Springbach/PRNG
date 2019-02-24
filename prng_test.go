@@ -40,7 +40,7 @@ func TestGenerate(t *testing.T) {
         // TEST1 check len of output byte array for matching output condition
         gen := NewGEN(d.Set, uint32(d.OutLen))
         token := gen.Generate(alg)
-        fmt.Printf("%d - %s - %s - %s\n", d.Num, gen.Type, gen.Elapsed, string(token))
+        fmt.Printf("%d - %s - len=%d - %s - %s\n", d.Num, gen.Type, d.OutLen, gen.Elapsed, string(token))
         if len(token) != d.OutLen {
             t.Error(
                 "For", d.Num,
@@ -68,7 +68,7 @@ func TestGenerate(t *testing.T) {
         // check len of output byte array for matching output condition
         gen := NewGEN(d.Set, uint32(d.OutLen))
         token := gen.Generate(alg)
-        fmt.Printf("%d - %s - %s - %s\n", d.Num, gen.Type, gen.Elapsed, string(token))
+        fmt.Printf("%d - %s - len=%d - %s - %s\n", d.Num, gen.Type, d.OutLen, gen.Elapsed, string(token))
         if len(token) != d.OutLen {
             t.Error(
                 "For", d.Num,
