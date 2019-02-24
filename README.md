@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 ﻿#PSEUDO RANDOM GENERATOR (prng) FOR GOLANG
+=======
+PSEUDO RANDOM GENERATOR (prng) FOR GOLANG
+
 with fixed output length
 and different algorithm usage possibility
 
 useful tool for auto generating crypto pass, ids, links and etc.
 
 USAGE:
-simple non crypto alg
+
+1. simple non crypto alg
 
 alg := &prng.SimpleAlg{}
 set := []byte("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789")
@@ -15,25 +20,34 @@ fmt.Println(string(token), len(token))
 
 OUTPUT: abWWCa6AxRHmQnOdLHYdGMQeEGOvzhij 32
 
-crypto alg
+
+2. crypto alg
+
 alg := &prng.CryptoAlg{}
 set := []byte("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789")
 gen := prng.NewGEN(set, 32)
 token := gen.Generate(alg)
 fmt.Println(string(token), len(token))
+
 OUTPUT: ldneTgPaBG3tHspoGZS5ox3ba3g8K19g 32
 
-default crypto base64 encoded alg for zero length symbol set
+
+3. default crypto base64 encoded alg for zero length symbol set
+
 alg := &prng.DefaultAlg{}
 set := []byte("") //ZERO LENGTH
 gen := prng.NewGEN(set, 100)
 token := gen.Generate(alg)
 fmt.Println(string(token), len(token))
+
 OUTPUT: 2ZOeBKxUghxty200biKF2EyrRpHpKTA4QnbdISTzpo_Kt6ZC8roE4Nrz3CXDR11lPxD7m4CUSCna5SqyDdL16d1cRoRQggzG9xqf 100
 
 TEST COVERAGE 100%
     type     length   elapsed    output
---------------------Testing simple non crypto pseudorandom Alg
+
+
+#   type     length   elapsed    output
+* Testing simple non crypto pseudorandom Alg
 1 - custom - len=32 - 13.071µs - dW5uaKGOVckzhwP1wsZE31shsvEN7EMX
 2 - custom - len=64 - 9.374µs - M6UikIfTRUfHl6hW5CgZnTJd3rertaMdWCWLIRlkendzir7rUX4ECIZh9FQF5ikx
 3 - custom - len=128 - 10.99µs - xwOq34g8yPXHwGPKHN7uGNKrNwqjocqSWLoTEowKsIjFMABXinY9PjFUi6q6ERohLHQifrp59UNdqsjWKOVdwU9xy5eg5ekOBhFP3Ym9eUp7XEJFbTx7qjD
@@ -50,7 +64,7 @@ D9oL7WmXH
 13 - custom - len=1 - 7.839µs - h
 14 - custom - len=2 - 7.868µs - Kg
 
--------------------------Testing crypto Alg
+* Testing crypto Alg
 1 - custom - len=32 - 24.136µs - KIUOCLRq9M3OhxVczkEXUivRKhLdkgSc
 2 - custom - len=64 - 51.448µs - Vullf4ZJt2qLKrDWpvswhujKnUvoGRUh1g9mzWnjh9C8NjqYiVzXTZWGCoUpvMDT
 3 - custom - len=128 - 102.786µs - ZvajMriJhRxXyPetzsksMEQi8ywNYmQB92KPNciQ7PCQvKnQd1pS8qRurO8yknLwAy4tqAFZry2R8QziKO916bb7wpP5Tub4xhVgg3D7bvZY9p6mU8Kuv
